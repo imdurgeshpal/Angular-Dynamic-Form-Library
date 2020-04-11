@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DynamicFormService } from './dynamic-form.service';
+import { FormConfig } from './models/form-config';
 
 @Component({
   selector: 'lib-dynamic-form',
@@ -7,17 +8,17 @@ import { DynamicFormService } from './dynamic-form.service';
   styleUrls: ['./dynamic-form.component.scss']
 })
 export class DynamicFormComponent implements OnInit {
-
- // formConfig: FormConfig;
+  
+  formConfig: FormConfig;
 
   constructor(private formService: DynamicFormService) { }
 
   ngOnInit() {
-    // this.formConfig = this.formService.getFormConfig();
+    this.formConfig = this.formService.getFormConfig();
   }
 
   submit() {
-    // console.log(this.formConfig.formGroup.value);
+    console.log(this.formConfig.formGroup.value);
   }
 
 }
